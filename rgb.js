@@ -26,6 +26,7 @@ window.addEventListener('load', (event) => {
         spanColor.textContent = currentRGBColor;
 
         document.body.style.backgroundColor = currentRGBColor;
+
     } 
     // if there's a received value, convert and apply to background
     else {
@@ -35,9 +36,33 @@ window.addEventListener('load', (event) => {
 
         currentRGBColor = hexToRGB(passHexColor);
 
-        spanColor.textContent = currentRGBColor;
+        console.log(`PassHexColor: ${passHexColor} RGBColor: ${currentRGBColor}`)
 
-        document.body.style.backgroundColor = currentRGBColor;
+        //spanColor.textContent = currentRGBColor;
+        // Turn the array into the pretty string for the user to see :) 
+        spanColor.textContent = 'rgb (' + currentRGBColor.join(',') + ')';
+
+
+       
+        /**
+         * This is essentially setting the background like this
+         * body {
+         *  background-color: 30,30,03;
+         * }
+         * 
+         * But that isn't a valid css value for the background-color property 
+         * But we can do something like this: 
+         * document.body.style.backgroundColor = 'rgb(' + a + ',' + b + ',' + c + ')';
+         * or this: 
+         * document.body.style.backgroundColor = 'rgb(' + [a,b,c].join(',') + ')';
+         * Or something to get the rgb value set correctly 
+         * 
+         */
+        //document.body.style.backgroundColor = currentRGBColor;
+
+        // This is my favorite as I changed the hexTpRGB method to return an array. 
+        document.body.style.backgroundColor = 'rgb(' + currentRGBColor.join(',') + ')';
+        
     }
 
     // pass color RGB to HEX
@@ -63,8 +88,17 @@ function hexToRGB(hexInc) {
     let newRGBColor = "rgb (" + rgbR + ", " + rgbG +
                       ", " + rgbB + ")";
 
+    // Construct RGB value as an array, this will make this easy later. 
+    // We can display it as the string about for the user later
+    
+    let newColor = [];
+    newColor.push(rgbB)
+    newColor.push(rgbG)
+    newColor.push(rgbR)
+
     // return to caller
-    return newRGBColor;
+    //return newRGBColor
+    return newColor;
 }
 
 // to convert a two-digit hex to decimal
