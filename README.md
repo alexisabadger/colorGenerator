@@ -16,4 +16,4 @@ Next steps:
       * RGB to hex math conversion
 
 
-The project would be more use to me if it maintained its randomly generated color when you switched between the pages, so that's what I'm doing.
+
