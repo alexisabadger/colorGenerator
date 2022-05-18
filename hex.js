@@ -8,7 +8,7 @@ const spanColor = document.getElementById("bg-color");
 
 // testing onLoad event
 window.addEventListener('load', (event) => {
-    console.log('The page has fully loaded');
+    // console.log('The page has fully loaded');
 
     // call createHex to generate a hex color
     let currentHexColor = createHexColor();
@@ -25,14 +25,14 @@ window.addEventListener('load', (event) => {
     // receiving color (from RGB)
     var passRGBColor = sessionStorage.getItem("passRGBColor");
     // if received value is null, alert user
-    if (passRGBColor == null) {
-        console.log("passRGBColor is currently null...");
-    } 
+    // if (passRGBColor == null) {
+        // console.log("passRGBColor is currently null...");
+    // } 
     // if there's a received value, convert and apply to background
-    else {
-        console.log(passRGBColor);
+    // else {
+        // console.log(passRGBColor);
         // console.log("The hex value is: " + rgbToHex(passRGBColor));
-    }
+    // }
 });
 
 // take the received RGB color string, break into R, G, B values
