@@ -6,14 +6,4 @@ This project is a random color generator. It's an offshoot of John Smilga's basi
 I added:
   - support for RGB values
   - the math to convert hex to RGB
-
-In progress:
-  - maintaining the color as you switch from RGB to Hex pages
-
-Next steps:
-  - building the reverse
-      * loading the RBG values into the hex page
-      * RGB to hex math conversion
-
-
-
+  - persistance of values in the browser as you switch between hex and RGB values (note: needs cookies to work)
