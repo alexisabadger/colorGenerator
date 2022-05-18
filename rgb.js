@@ -9,7 +9,7 @@ const spanColor = document.getElementById("bg-color");
 // testing onLoad event
 window.addEventListener('load', (event) => {
     // console.log('The page has fully loaded');
-    console.log("page load event listener is firing");
+    // console.log("page load event listener is firing");
     // receiving color (from HEX page)
     var passHexColor = sessionStorage.getItem("passHexColor");
     var currentRGBColor = '';
@@ -17,8 +17,8 @@ window.addEventListener('load', (event) => {
     // if/else to see if there's a stored value coming in
     // if received value is null, alert user AND generate a new color
     if (passHexColor == null) {
-        console.log("pageLoad -> if statement is firing");
-        console.log("(passHexColor is currently null...)");
+        // console.log("pageLoad -> if statement is firing");
+        // console.log("(passHexColor is currently null...)");
 
         // call createRGB to generate an RGB color
         currentRGBColor = createRGB();
@@ -29,8 +29,8 @@ window.addEventListener('load', (event) => {
     } 
     // if there's a received value, convert and apply to background
     else {
-        console.log("pageLoad - > else statement is firing");
-        console.log(passHexColor);
+        // console.log("pageLoad - > else statement is firing");
+        // console.log(passHexColor);
         // console.log(hexToRGB(passHexColor));
 
         currentRGBColor = hexToRGB(passHexColor);
@@ -48,7 +48,7 @@ window.addEventListener('load', (event) => {
 
 // this function converts a 6-digit hexadecimal color to its equivilant RGB value
 function hexToRGB(hexInc) {
-    console.log("hexToRGB is firing");
+    // console.log("hexToRGB is firing");
     // get individual red, green, and blue values
     let hexR = hexInc.slice(1, 3);
     let hexG = hexInc.slice(3, 5);
@@ -69,13 +69,13 @@ function hexToRGB(hexInc) {
 
 // to convert a two-digit hex to decimal
 function hexConvert(incomingHexColor) {
-    console.log("hexConvert is firing");
+    // console.log("hexConvert is firing");
     // turn two-digit hexademical number into a string of single hex digits
     let hexSingles = Array.from(incomingHexColor);     // let or var?
 
     // convert each to binary, add to get RGB value
     let newRGB = ((hex.indexOf(hexSingles[0]) * 16**1) + (hex.indexOf(hexSingles[1]) * 16**0));
-    console.log(newRGB);
+    // console.log(newRGB);
 
     return newRGB;
 }
@@ -85,7 +85,7 @@ function hexConvert(incomingHexColor) {
 // event listener for id="btn" (text: CLICKME)
 // --> every 'click' event calls this anonymous function:
 btn.addEventListener('click', function() {
-    console.log("anonymous button event listener is firing");
+    // console.log("anonymous button event listener is firing");
     
     // call createRGB to generate an RGB color
     let currentRGBColor = createRGB();
@@ -104,7 +104,7 @@ btn.addEventListener('click', function() {
 
 // this function generates a random RGB color value
 function createRGB() {
-    console.log("createRGB is firing");
+    // console.log("createRGB is firing");
     // declare hexColor, set it equal to '#' at start (all hex colors need this)
     let rColor = '';
     let gColor = '';
@@ -124,7 +124,7 @@ function createRGB() {
 
 // function to get a random number from 0 to F (hex[0] to hex[15])
 function getRandomNumber() {
-    console.log("getRandomNumber is firing");
+    // console.log("getRandomNumber is firing");
     return Math.floor(Math.random() * 256);
 }
 
